@@ -1,0 +1,5 @@
+
+
+<bean id="alient" class="om.protector.Alien">
+  
+</bean>

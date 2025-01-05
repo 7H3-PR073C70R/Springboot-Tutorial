@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:util="http://www.springframework.org/schema/util" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd"> <!-- bean definitions here -->
+
+   <bean id="alien" class="com.protector.Spring1.Alien" autowire="byType">
+   		<property name="age" value="21"></property> <!-- Via Setter -->
+   		<property name="computer">
+   		     <bean id="laptop" class="com.protector.Spring1.Laptop" scope="prototype"></bean>
+   		</property> 
+   		<!-- <constructor-arg value = "21"/>  Via Constructor
+   		<constructor-arg ref="laptop"/>  Via Constructor -->
+   </bean>
+  
+   <bean id="desktop" class="com.protector.Spring1.Desktop" primary="true" lazy-init="true"></bean>
+</beans>
+
